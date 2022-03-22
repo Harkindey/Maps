@@ -5,6 +5,7 @@ export class User {
   location: {
     lat: number;
     lng: number;
+    address: string;
   };
 
   constructor() {
@@ -12,6 +13,7 @@ export class User {
     this.location = {
       lat: parseFloat(faker.address.latitude()),
       lng: parseFloat(faker.address.longitude()),
+      address: faker.address.city(),
     };
   }
 }
