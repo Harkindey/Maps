@@ -1,6 +1,3 @@
-import { User } from './User';
-import { Company } from './Company';
-
 interface IMappable {
   location: {
     lng: number;
@@ -21,22 +18,20 @@ export class CustomMap {
   }
 
   addMarker(mappable: IMappable): void {
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lng: mappable.location.lng,
         lat: mappable.location.lat,
       },
     });
-  }
 
-  //   addCompanyMarker(company: Company): void {
-  //     new google.maps.Marker({
-  //       map: this.googleMap,
-  //       position: {
-  //         lng: company.location.lng,
-  //         lat: company.location.lat,
-  //       },
-  //     });
-  //   }
+    marker.addListener('click', () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: 'Hi there!',
+      });
+
+      infoWindow.open(this.googleMap, marker);
+    });
+  }
 }
