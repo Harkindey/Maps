@@ -1,9 +1,10 @@
-interface IMappable {
+export interface IMappable {
   location: {
     lng: number;
     lat: number;
   };
   markerContent(): string;
+  colors: string;
 }
 export class CustomMap {
   private googleMap: google.maps.Map;

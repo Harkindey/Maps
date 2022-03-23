@@ -1,12 +1,14 @@
 import faker from '@faker-js/faker';
+import { IMappable } from './CustomMap';
 
-export class User {
+export class User implements IMappable {
   name: string;
   location: {
     lat: number;
     lng: number;
     address: string;
   };
+  color: string = 'red';
 
   constructor() {
     this.name = faker.name.firstName();

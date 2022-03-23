@@ -1,12 +1,13 @@
 import faker from '@faker-js/faker';
-
-export class Company {
+import { IMappable } from './CustomMap';
+export class Company implements IMappable {
   companyName: string;
   catchPhrase: string;
   location: {
     lat: number;
     lng: number;
   };
+  color: string = 'blue';
 
   constructor() {
     this.companyName = faker.company.companyName();
