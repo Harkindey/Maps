@@ -16,4 +16,8 @@ export class User {
       address: faker.address.city(),
     };
   }
+
+  markerContent(): string {
+    return `User Name ; ${this.name}`;
+  }
 }
