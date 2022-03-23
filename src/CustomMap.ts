@@ -13,22 +13,23 @@ export class CustomMap {
     });
   }
 
-  addUserMarker(user: User): void {
+  addMarker(mappable: User | Company): void {
     new google.maps.Marker({
       map: this.googleMap,
       position: {
-        lng: user.location.lng,
-        lat: user.location.lat,
+        lng: mappable.location.lng,
+        lat: mappable.location.lat,
       },
     });
   }
-  addCompanyMarker(company: Company): void {
-    new google.maps.Marker({
-      map: this.googleMap,
-      position: {
-        lng: company.location.lng,
-        lat: company.location.lat,
-      },
-    });
-  }
+
+  //   addCompanyMarker(company: Company): void {
+  //     new google.maps.Marker({
+  //       map: this.googleMap,
+  //       position: {
+  //         lng: company.location.lng,
+  //         lat: company.location.lat,
+  //       },
+  //     });
+  //   }
 }
