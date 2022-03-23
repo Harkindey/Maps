@@ -9,7 +9,7 @@ export class CustomMap {
 
   constructor(public divId: string) {
     this.googleMap = new google.maps.Map(document.getElementById(divId), {
-      zoom: 5,
+      zoom: 1,
       center: {
         lat: 0,
         lng: 0,
